@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace SimpleProject.Sce
 {
@@ -6,12 +7,12 @@ namespace SimpleProject.Sce
     {
         protected Vector2 _pos;
         protected float _radius;
-        Circle(Vector2 pos, float radius)
+        public Circle(Vector2 pos, float radius)
         {
             _pos = pos;
             _radius = radius;
         }
-        void SetRadius(float radius)
+        public void SetRadius(float radius)
         {
             _radius = radius;
         }
@@ -26,6 +27,17 @@ namespace SimpleProject.Sce
             Vector2 v = destination - _pos;
             v = v.normalized;
             return _pos + v*_radius;
+        }
+
+        public bool IsFocus(Vector2 focusPos)
+        {
+            Vector2 v = focusPos - _pos;
+            
+            if (v.magnitude < _radius)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

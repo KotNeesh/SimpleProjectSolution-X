@@ -5,23 +5,23 @@ using UnityEngine;
 
 namespace SimpleProject.Sce
 {
-    public class GUISimplus
+    public class GUISimplus : Circle
     {
         private GameController _controller;
         private Texture2D _texture;
-        public float Radius = 50;
+        private const float _radius = 50;
         public Rect _pos;
         private Rect _posBig;
         private Rect _texPos;
         private Simplus _myObj;
-        public GUISimplus(Simplus myObj, GameController controller, Texture2D texture, Vector2 pos)
+        public GUISimplus(Simplus myObj, GameController controller, Texture2D texture, Vector2 pos) : base(pos, _radius)
         {
             _myObj = myObj;
             _controller = controller;
             _texture = texture;
             _texPos = new Rect(0, 0, 1f / 4, 1f / 1);
-            _pos = InitRect(pos, Radius);
-            _posBig = InitRect(pos, Radius * 1.1f);
+            _pos = InitRect(pos, _radius);
+            _posBig = InitRect(pos, _radius * 1.1f);
         }
         private Rect InitRect(Vector2 pos, float radius)
         {
@@ -31,31 +31,10 @@ namespace SimpleProject.Sce
             rect.center = pos;
             return rect;
         }
-        public void Start()
-        {
-           
-            //_texture.wrapMode = TextureWrapMode.Repeat;
-            
-        }
+
         public bool IsContains()
         {
-            Vector2 mousePos = _controller.GetMouse().Pos;
-            if (_pos.Contains(mousePos))
-            {
-                mousePos.x -= _pos.x;
-                mousePos.y -= _pos.y;
-                Vector2 v;
-                v.x = _pos.width / 2;
-                v.y = _pos.height / 2;
-                v -= mousePos;
-                if (v.magnitude < Radius)
-                {
-                    int x = 0;
-                    x++;
-                    return true;
-                }
-            }
-            return false;
+            return IsFocus(_controller.GetMouse().Pos);
         }
         public void Draw()
         {

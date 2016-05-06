@@ -6,5 +6,6 @@ namespace SimpleProject.Sce
     {
         Vector2 GetPos();
         Vector2 GetPosSurface(Vector2 destination);
+        bool IsFocus(Vector2 focusPos);
     }
 }

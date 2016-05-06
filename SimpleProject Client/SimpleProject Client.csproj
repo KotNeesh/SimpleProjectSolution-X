@@ -92,6 +92,7 @@
     <Compile Include="Assets\UI\SceneGame\Simplus\SimplusLink.cs" />
     <Compile Include="Assets\UI\SceneGame\other\GameManager.cs" />
     <Compile Include="Assets\UI\SceneGame\other\MyButton.cs" />
+    <Compile Include="Assets\UI\SceneGame\VectorSpriteSpawner.cs" />
     <Compile Include="Assets\UI\SceneMenu\GUI\GUIAccount.cs" />
     <Compile Include="Assets\UI\SceneMenu\GUI\GUIChat.cs" />
     <Compile Include="Assets\UI\SceneMenu\GUI\GUIProfile.cs" />

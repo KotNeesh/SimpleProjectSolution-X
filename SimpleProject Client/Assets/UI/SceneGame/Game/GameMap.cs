@@ -12,7 +12,7 @@ namespace SimpleProject.Sce
             _simpluses = new List<Simplus>();
             _simpluses.Add(new Simplus(controller, texture, new Vector2(300, 150)));
 
-            _simpluses.Add(new Simplus(controller, texture, new Vector2(1000, 400)));
+            _simpluses.Add(new Simplus(controller, texture, new Vector2(500, 400)));
         }
         public Simplus FindFocusSimplus()
         {
