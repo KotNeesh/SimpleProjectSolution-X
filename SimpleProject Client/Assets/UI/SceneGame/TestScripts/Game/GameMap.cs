@@ -13,17 +13,16 @@ namespace SimpleProject.Sce
             GameObject[] objects = GameObject.FindGameObjectsWithTag("Simplus");
             foreach (GameObject obj in objects)
             {
-                SimplusWrapper wrap = obj.GetComponent<SimplusWrapper>();
+                Simplus wrap = obj.GetComponent<Simplus>();
                 _simplusContainer.Add(wrap);
-                Debug.Log("added");
             }
         }
 
-        public SimplusWrapper GetFocusedSimplus(Vector2 pos)
+        public Simplus GetFocusedSimplus(Vector2 pos)
         {
-            foreach (SimplusWrapper wrap in _simplusContainer)
+            foreach (Simplus wrap in _simplusContainer)
             {
-                if (wrap.IsFocused(pos))
+                if (wrap._wrapper.IsFocused(pos))
                     return wrap;
             }
             return null;

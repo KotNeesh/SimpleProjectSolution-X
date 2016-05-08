@@ -14,8 +14,10 @@ namespace SimpleProject.Sce
 
         public void UpdateLink()
         {
-            SimplusWrapper wrap = _map.GetFocusedSimplus(_mouse.Pos);
-            _linkManager.UpdateDraw(wrap, _mouse);
+
+            Simplus simplus = _map.GetFocusedSimplus(_mouse.Pos);
+ 
+            _linkManager.UpdateDraw(simplus, _mouse);
         }
 
         //public GameObject GetFocusObject()

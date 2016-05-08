@@ -8,16 +8,16 @@ namespace SimpleProject.Sce
 {
     public class MessageLink
     { 
-        private SimplusWrapper _source;
-        private SimplusWrapper _destination;
-        public SimplusWrapper Source
+        private Simplus _source;
+        private Simplus _destination;
+        public Simplus Source
         {
             get
             {
                 return _source;
             }
         }
-        public SimplusWrapper Destination
+        public Simplus Destination
         {
             get
             {

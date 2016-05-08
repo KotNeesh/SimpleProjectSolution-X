@@ -8,8 +8,6 @@ namespace SimpleProject.Sce
 {
     public class LinkActionDrawer : MonoBehaviour
     {
-        public Vector2 S;
-        public Vector2 D;
         public enum LinkState
         {
             Link,
@@ -50,31 +48,15 @@ namespace SimpleProject.Sce
             _width = _sprRenderer.sprite.rect.width;
         }
 
-        public void Draw(DragInfo drag, LinkState state)
+        public void UpdateInfo(DragInfo drag, LinkState state)
         {
-            S = drag.GetPosSource();
-            D = drag.GetPosDestination();
-
-
-            if (_instance == null)
-                Debug.Log("null instance");
-            if (!_isDrawing)
-                Visible(true);
-
             SetSpite(state);
             UpdateSpriteTransform(drag.GetPosSource(), drag.GetPosDestination());
         }
+        
 
-        public void NotDraw()
-        {
-            if (!_isDrawing)
-                return;
 
-            Visible(false);
-            _isDrawing = false;
-        }
-
-        private void Visible(bool isVisible)
+        public void Visible(bool isVisible)
         {
             _instance.SetActive(isVisible);
         }

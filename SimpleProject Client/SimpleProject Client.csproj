@@ -101,11 +101,15 @@
     <Compile Include="Assets\UI\SceneGame\TestScripts\Obj2D\DragInfo.cs" />
     <Compile Include="Assets\UI\SceneGame\TestScripts\Obj2D\IObj2D.cs" />
     <Compile Include="Assets\UI\SceneGame\TestScripts\Obj2D\Point.cs" />
-    <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\ISimplusActionStater.cs" />
-    <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\SimplusActionStater.cs" />
-    <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\SimplusAnimationManager.cs" />
-    <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\SimplusContainer.cs" />
-    <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\SimplusWrapper.cs" />
+    <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\Link\SimplusLinkActionStater.cs" />
+    <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\Simplus\ISimplusActionStater.cs" />
+    <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\Simplus\Simplus.cs" />
+    <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\Simplus\SimplusActionStater.cs" />
+    <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\Simplus\SimplusAnimationManager.cs" />
+    <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\Simplus\SimplusContainer.cs" />
+    <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\Link\SimplusLink.cs" />
+    <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\Link\SimplusLinkWrapper.cs" />
+    <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\Simplus\SimplusWrapper.cs" />
     <Compile Include="Assets\UI\SceneGame\VectorSpriteSpawner.cs" />
     <Compile Include="Assets\UI\SceneGame\other\GameManager.cs" />
     <Compile Include="Assets\UI\SceneGame\other\MyButton.cs" />
@@ -118,5 +122,6 @@
     <Compile Include="Assets\UI\SceneMenu\Window\GUI\IGUISign.cs" />
     <Compile Include="Assets\UI\SceneMenu\Window\WindowMenu.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

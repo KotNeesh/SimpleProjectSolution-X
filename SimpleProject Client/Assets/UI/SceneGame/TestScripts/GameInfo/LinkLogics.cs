@@ -8,24 +8,24 @@ namespace SimpleProject.Sce
 {
     public class LinkLogics
     {
-        private SimplusWrapper _focus;
-        private SimplusWrapper _source;
-        private SimplusWrapper _destination;
-        public SimplusWrapper Source
+        private Simplus _focus;
+        private Simplus _source;
+        private Simplus _destination;
+        public Simplus Source
         {
             get
             {
                 return _source;
             }
         }
-        public SimplusWrapper Destination
+        public Simplus Destination
         {
             get
             {
                 return _destination;
             }
         }
-        public SimplusWrapper Focus
+        public Simplus Focus
         {
             get
             {
@@ -53,7 +53,7 @@ namespace SimpleProject.Sce
         {
             if (_source != null)
             {
-                _source.SetPressed(false);
+                _source._wrapper.SetPressed(false);
                 _source = null;
             }
             
@@ -69,14 +69,13 @@ namespace SimpleProject.Sce
                 if (_focus != null)
                 {
                     _source = _focus;
-                    _source.SetPressed(true);
+                    _source._wrapper.SetPressed(true);
                 }
             }
             if (MouseState.Up == state)
             {
                 if(_source != null && _focus != null && _focus != _source)
                 {
-                    Debug.Log("up");
                     _destination = _focus;
                     _message = new MessageLink(this);
                 }
@@ -84,17 +83,17 @@ namespace SimpleProject.Sce
             }
         }
 
-        public void SetFocus(SimplusWrapper focus)
+        public void SetFocus(Simplus focus)
         {
             if (focus != _focus)
             {
                 if (focus != null)
                 {
-                    focus.SetFocused(true);
+                    focus._wrapper.SetFocused(true);
                 }
                 if (_focus != null)
                 {
-                    _focus.SetFocused(false);
+                    _focus._wrapper.SetFocused(false);
                 }
                 _focus = focus;
             }

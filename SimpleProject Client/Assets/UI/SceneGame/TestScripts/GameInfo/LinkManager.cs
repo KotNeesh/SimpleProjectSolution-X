@@ -16,9 +16,18 @@ namespace SimpleProject.Sce
             _logics = new LinkLogics();
             //_drawer = new LinkActionDrawer();
         }
+        public void Update()
+        {
+            MessageLink m = _logics.GetMessage();
+            if (m != null)
+            {
+                Debug.Log("Create link");
+                m.Source.CreateLink(m.Destination);
+            }
+        }
 
 
-        public void UpdateDraw(SimplusWrapper simplus, MouseManager mouse)
+        public void UpdateDraw(Simplus simplus, MouseManager mouse)
         {
             _logics.SetFocus(simplus);
             _logics.SetMouseState(mouse.State.Get());
@@ -26,20 +35,21 @@ namespace SimpleProject.Sce
             if (_logics.ToDraw)
             {
                 DragInfo drag = new DragInfo();
-                drag.SetSource(_logics.Source);
+                drag.SetSource(_logics.Source._wrapper);
                 if (_logics.Focus != null)
                 {
-                    drag.SetDestination(_logics.Focus);
+                    drag.SetDestination(_logics.Focus._wrapper);
                 }
                 else
                 {
                     
                     drag.SetDestination(new Point(Camera.main.ScreenToWorldPoint(Input.mousePosition)));
                 }
-                _drawer.Draw(drag, LinkActionDrawer.LinkState.Link);
+                _drawer.UpdateInfo(drag, LinkActionDrawer.LinkState.Link);
+                _drawer.Visible(true);
             }
             else
-                _drawer.NotDraw();
+                _drawer.Visible(false);
         }
     }
 }
