@@ -30,7 +30,8 @@ namespace SimpleProject.Sce
 
         public Vector2 GetPosSurface(Vector2 destination)
         {
-            RaycastHit2D[] hits =  Physics2D.RaycastAll(destination, GetPos());
+            RaycastHit2D[] hits =  Physics2D.RaycastAll(destination, GetPos(), LayerMask.NameToLayer("Simplus"));
+            Debug.DrawLine(destination, GetPos());
             for (int i = 0; i < hits.Length; i++)
             {
                 if (hits[i].transform.gameObject == _obj)

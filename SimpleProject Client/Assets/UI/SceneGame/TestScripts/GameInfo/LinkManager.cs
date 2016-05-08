@@ -6,22 +6,23 @@ using UnityEngine;
 
 namespace SimpleProject.Sce
 {
-    public class LinkManager
+    public class LinkManager : MonoBehaviour
     {
         private LinkLogics _logics;
-        private LinkActionDrawer _drawer;
+        public LinkActionDrawer _drawer;
 
-        public LinkManager()
+        public void Start()
         {
             _logics = new LinkLogics();
-            _drawer = new LinkActionDrawer();
+            //_drawer = new LinkActionDrawer();
         }
 
-        public void Update(SimplusWrapper simplus, MouseInfo mouse)
+
+        public void UpdateDraw(SimplusWrapper simplus, MouseInfo mouse)
         {
             _logics.SetFocus(simplus);
             _logics.SetMouseState(mouse.State.Get());
-            
+
             if (_logics.ToDraw)
             {
                 DragInfo drag = new DragInfo();
@@ -32,10 +33,12 @@ namespace SimpleProject.Sce
                 }
                 else
                 {
-                    drag.SetDestination(new Point(mouse.Pos));
+                    drag.SetDestination(new Point(Camera.main.ScreenToWorldPoint(Input.mousePosition)));
                 }
                 _drawer.Draw(drag, LinkActionDrawer.LinkState.Link);
             }
+            else
+                _drawer.NotDraw();
         }
     }
 }
