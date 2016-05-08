@@ -8,6 +8,7 @@ namespace SimpleProject.Sce
 {
     public class SimplusWrapper : MonoBehaviour, IObj2D
     {
+        public Vector2 V;
         private SimplusActionState _actionState;
         public GameObject _obj;
         private SimplusAnimationManager _animManager;
@@ -25,6 +26,7 @@ namespace SimpleProject.Sce
 
         public Vector2 GetPos()
         {
+            V = _obj.transform.position;
             return _obj.transform.position;
         }
 
@@ -36,6 +38,7 @@ namespace SimpleProject.Sce
             {
                 if (hits[i].transform.gameObject == _obj)
                 {
+                    Debug.DrawLine(hits[i].point, _obj.transform.position, Color.green);
                     return hits[i].point;
                 }
             }

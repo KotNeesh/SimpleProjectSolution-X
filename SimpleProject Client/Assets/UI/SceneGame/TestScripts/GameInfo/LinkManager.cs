@@ -18,7 +18,7 @@ namespace SimpleProject.Sce
         }
 
 
-        public void UpdateDraw(SimplusWrapper simplus, MouseInfo mouse)
+        public void UpdateDraw(SimplusWrapper simplus, MouseManager mouse)
         {
             _logics.SetFocus(simplus);
             _logics.SetMouseState(mouse.State.Get());
@@ -33,6 +33,7 @@ namespace SimpleProject.Sce
                 }
                 else
                 {
+                    
                     drag.SetDestination(new Point(Camera.main.ScreenToWorldPoint(Input.mousePosition)));
                 }
                 _drawer.Draw(drag, LinkActionDrawer.LinkState.Link);

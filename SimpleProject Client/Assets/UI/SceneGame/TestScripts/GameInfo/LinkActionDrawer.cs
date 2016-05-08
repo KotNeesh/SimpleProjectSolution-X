@@ -8,6 +8,8 @@ namespace SimpleProject.Sce
 {
     public class LinkActionDrawer : MonoBehaviour
     {
+        public Vector2 S;
+        public Vector2 D;
         public enum LinkState
         {
             Link,
@@ -50,6 +52,10 @@ namespace SimpleProject.Sce
 
         public void Draw(DragInfo drag, LinkState state)
         {
+            S = drag.GetPosSource();
+            D = drag.GetPosDestination();
+
+
             if (_instance == null)
                 Debug.Log("null instance");
             if (!_isDrawing)

@@ -8,29 +8,9 @@ namespace SimpleProject.Sce
 {
     class GameManager : MonoBehaviour
     {
-        
-
-        private MouseInfo _mouse = new MouseInfo();
+        public MouseManager _mouse;
         public LinkManager _linkManager;
         private GameMap _map;
-
-        private Vector2 GetMousePos()
-        {
-            Vector2 pos;
-            pos = Input.mousePosition;
-            pos.y = Screen.height - pos.y;
-            return pos;
-        }
-
-        public void Start()
-        {
-        }
-
-        public void UpdateMouse()
-        {
-            _mouse.Pos = GetMousePos();
-            _mouse.State.Set(Input.GetMouseButton(0));
-        }
 
         public void UpdateLink()
         {
@@ -43,19 +23,27 @@ namespace SimpleProject.Sce
 
         public GameObject GetFocusObject()
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            return _mouse.MouseOver();
+            //Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, -Vector2.up);
-            if (hit.collider != null)
-            {
-                return hit.collider.transform.gameObject;
-            }
-            return null;
+            //RaycastHit hit;
+            //Vector3 mouseVecFar = new Vector3(mousePos.x, mousePos.y, -100);
+            //Vector3 mouseVecCls = new Vector3(mousePos.x, mousePos.y, 100);
+            ////Ray ray = new Ray(mouseVec, Vector3.forward);
+            //Physics.Raycast(mouseVecFar, mouseVecCls, out hit);
+            //Debug.DrawLine(mouseVecFar, mouseVecCls);
+            ////RaycastHit hit = Physics.Raycast(mousePos, Vector2.right, LayerMask.NameToLayer("Simplus"));
+            //if (hit.collider != null)
+            //{
+            //    return hit.collider.transform.gameObject;
+            //}
+            //Debug.Log("hit == null");
+            //return null;
         }
 
         public void Update()
         {
-            UpdateMouse();
+            //_mouse.Update();
             UpdateLink();
         }
 
