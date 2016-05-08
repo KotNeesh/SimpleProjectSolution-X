@@ -16,13 +16,10 @@ namespace SimpleProject.Sce
     {
         private bool _isFocused;
         private bool _isPressed;
-        private bool _isChanged;
 
-        public bool IsChanged { get { return _isChanged; } }
 
         public SimplusActionState GetState()
         {
-            _isChanged = false;
             if (_isPressed)
                 return SimplusActionState.Pressed;
             if (_isFocused)
@@ -33,13 +30,11 @@ namespace SimpleProject.Sce
 
         public void SetFocused(bool isFocused)
         {
-            _isChanged = _isFocused != isFocused;
             _isFocused = isFocused;
         }
 
         public void SetPressed(bool isPressed)
         {
-            _isChanged = (_isPressed != isPressed);
             _isPressed = isPressed;
         }
     }
