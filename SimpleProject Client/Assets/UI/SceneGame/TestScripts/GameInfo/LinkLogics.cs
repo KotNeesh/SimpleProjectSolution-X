@@ -40,8 +40,6 @@ namespace SimpleProject.Sce
             }
         }
 
-        private SimplusActionStater _stater = new SimplusActionStater();
-
         private MessageLink _message;
 
         public MessageLink GetMessage()
@@ -53,10 +51,12 @@ namespace SimpleProject.Sce
 
         private void Clear()
         {
-            _stater.SetPressed(false);
-            if (_stater.IsChanged)
-                SetAnimation(_source, _stater.GetState());
-            _source = null;
+            if (_source != null)
+            {
+                _source.SetPressed(false);
+                _source = null;
+            }
+            
             _destination = null;
             //SetAnimation(_focus, SimplusActionState.Focused);
         }
@@ -69,15 +69,14 @@ namespace SimpleProject.Sce
                 if (_focus != null)
                 {
                     _source = _focus;
-                    _stater.SetPressed(true);
-                    if (_stater.IsChanged)
-                        SetAnimation(_source, _stater.GetState());
+                    _source.SetPressed(true);
                 }
             }
             if (MouseState.Up == state)
             {
                 if(_source != null && _focus != null && _focus != _source)
                 {
+                    Debug.Log("up");
                     _destination = _focus;
                     _message = new MessageLink(this);
                 }
@@ -87,20 +86,20 @@ namespace SimpleProject.Sce
 
         public void SetFocus(SimplusWrapper focus)
         {
-            _stater.SetFocused(focus != null);
-            if (_stater.IsChanged)
+            if (focus != _focus)
             {
-                SetAnimation(focus, _stater.GetState());
-                SetAnimation(_focus, SimplusActionState.Passive);
-                
+                if (focus != null)
+                {
+                    focus.SetFocused(true);
+                }
+                if (_focus != null)
+                {
+                    _focus.SetFocused(false);
+                }
+                _focus = focus;
             }
-            _focus = focus;
         }
 
-        private void SetAnimation(SimplusWrapper obj, SimplusActionState type)
-        {
-            if (obj != null)
-                obj.SetActionState(type);
-        }
+      
     }
 }

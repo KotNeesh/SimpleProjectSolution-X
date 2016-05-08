@@ -20,9 +20,9 @@ namespace SimpleProject.Sce
             return _pos;
         }
 
-        public bool IsFocus(Vector2 focusPos)
+        public bool IsFocused(Vector2 pos)
         {
-            return focusPos.Equals(_pos);
+            return pos.Equals(_pos);
         }
     }
 }

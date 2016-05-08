@@ -101,6 +101,7 @@
     <Compile Include="Assets\UI\SceneGame\TestScripts\Obj2D\DragInfo.cs" />
     <Compile Include="Assets\UI\SceneGame\TestScripts\Obj2D\IObj2D.cs" />
     <Compile Include="Assets\UI\SceneGame\TestScripts\Obj2D\Point.cs" />
+    <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\ISimplusActionStater.cs" />
     <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\SimplusActionStater.cs" />
     <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\SimplusAnimationManager.cs" />
     <Compile Include="Assets\UI\SceneGame\TestScripts\Simplus\SimplusContainer.cs" />

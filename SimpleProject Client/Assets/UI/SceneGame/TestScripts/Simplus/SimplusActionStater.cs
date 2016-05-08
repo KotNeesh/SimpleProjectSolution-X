@@ -12,7 +12,7 @@ namespace SimpleProject.Sce
         Focused,
         Pressed
     }
-    public class SimplusActionStater
+    public class SimplusActionStater : ISimplusActionStater
     {
         private bool _isFocused;
         private bool _isPressed;
@@ -33,7 +33,7 @@ namespace SimpleProject.Sce
 
         public void SetFocused(bool isFocused)
         {
-            _isChanged = !_isPressed && (_isFocused != isFocused);
+            _isChanged = _isFocused != isFocused;
             _isFocused = isFocused;
         }
 
