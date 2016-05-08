@@ -7,6 +7,7 @@ namespace SimpleProject.Mess
 {
     using TypeID = Byte;
 
+    [Serializable]
     public sealed class MessageProfile : MessageBase
     {
         public override TypeID Type
