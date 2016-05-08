@@ -4,6 +4,8 @@
 namespace SimpleProject.Mess
 {
     using TypeID = Byte;
+
+    [Serializable]
     public sealed class MessageChat : MessageBase
     {
         public override TypeID Type

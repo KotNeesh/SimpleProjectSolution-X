@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 namespace SimpleProject.Mess
 {
     using TypeID = Byte;
+
+    [Serializable]
     public sealed class MessageAccount : MessageBase
     {
         public override TypeID Type

@@ -21,6 +21,9 @@ namespace SimpleProject.Net
         private List<IUserNetwork> _clients;
         private IMessagesManagerNetwork _messagesManager;
 
+        private Unpacker _unpacker = new Unpacker();
+        private Packer _packer = new Packer();
+
         public NetworkServerMachine(IMessagesManagerNetwork messagesManager)
         {
             _messagesManager = messagesManager;
@@ -66,7 +69,7 @@ namespace SimpleProject.Net
                 IMessage m = _messagesManager.Get();
                 if (m == null) break;
                 Packet p = null;
-                RegisterPacker.CreatePacket(ref p, m);
+                _packer.CreatePacket(ref p, m);
                 MessageBase mm = (MessageBase)m;
                 if (mm.Users.Count != 0)
                 {
@@ -100,7 +103,7 @@ namespace SimpleProject.Net
                     Network.Receive(user);
                     IMessage m = null;
                     Packet p = user.PacketReceive;
-                    PacketState s = RegisterUnpacker.CreateMessage(ref m, p);
+                    PacketState s = _unpacker.CreateMessage(ref m, p);
                     if (s == PacketState.Ok)
                     {
                         ((MessageBase)m).Users.Add(user);

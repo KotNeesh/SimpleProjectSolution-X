@@ -13,7 +13,6 @@ namespace SimpleProject.Mess
     {
         Account,
         Chat,
-        Alive,
         Profile
     }
 }
