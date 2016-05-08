@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.3.4f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -94,7 +96,7 @@
     <Compile Include="Assets\UI\SceneGame\TestScripts\GameInfo\LinkLogics.cs" />
     <Compile Include="Assets\UI\SceneGame\TestScripts\GameInfo\LinkManager.cs" />
     <Compile Include="Assets\UI\SceneGame\TestScripts\GameInfo\MessageLink.cs" />
-    <Compile Include="Assets\UI\SceneGame\TestScripts\GameInfo\MouseInfo.cs" />
+    <Compile Include="Assets\UI\SceneGame\TestScripts\GameInfo\MouseManager.cs" />
     <Compile Include="Assets\UI\SceneGame\TestScripts\Obj2D\Circle.cs" />
     <Compile Include="Assets\UI\SceneGame\TestScripts\Obj2D\DragInfo.cs" />
     <Compile Include="Assets\UI\SceneGame\TestScripts\Obj2D\IObj2D.cs" />

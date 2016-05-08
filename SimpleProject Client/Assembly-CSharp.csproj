@@ -67,7 +67,7 @@
      <Compile Include="Assets\UI\SceneGame\TestScripts\GameInfo\LinkLogics.cs" />
      <Compile Include="Assets\UI\SceneGame\TestScripts\GameInfo\LinkManager.cs" />
      <Compile Include="Assets\UI\SceneGame\TestScripts\GameInfo\MessageLink.cs" />
-     <Compile Include="Assets\UI\SceneGame\TestScripts\GameInfo\MouseInfo.cs" />
+     <Compile Include="Assets\UI\SceneGame\TestScripts\GameInfo\MouseManager.cs" />
      <Compile Include="Assets\UI\SceneGame\TestScripts\Obj2D\Circle.cs" />
      <Compile Include="Assets\UI\SceneGame\TestScripts\Obj2D\DragInfo.cs" />
      <Compile Include="Assets\UI\SceneGame\TestScripts\Obj2D\IObj2D.cs" />
