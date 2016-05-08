@@ -26,12 +26,12 @@ namespace SimpleProject.Sce
         {
             LinkSprite = Resources.Load("LinkSprite", typeof(Sprite)) as Sprite;
             ShearsSprite = Resources.Load("ShearsSprite", typeof(Sprite)) as Sprite;
-            //LinkSprite.pivot = SpriteAlignment.
+            
 
-            //_instance = new GameObject("LinkSpriteInstance");
-            //_instance.AddComponent<SpriteRenderer>();
-            //_sprRenderer = _instance.GetComponent<SpriteRenderer>();
-            //_instance.SetActive(false);
+            _instance = new GameObject("LinkSpriteInstance");
+            _instance.AddComponent<SpriteRenderer>();
+            _sprRenderer = _instance.GetComponent<SpriteRenderer>();
+            _instance.SetActive(false);
         }
         
         private void SetSpite(LinkState state)
