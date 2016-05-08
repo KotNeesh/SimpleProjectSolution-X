@@ -2,33 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace SimpleProject.Sce
 {
     public class MessageLink
-    {
-        private Simplus _source;
-        private Simplus _destination;
-        public Simplus Source
+    { 
+        private SimplusWrapper _source;
+        private SimplusWrapper _destination;
+        public SimplusWrapper Source
         {
             get
             {
                 return _source;
             }
         }
-        public Simplus Destination
+        public SimplusWrapper Destination
         {
             get
             {
                 return _destination;
             }
         }
-        public MessageLink(LinkInfo info)
+        public MessageLink(LinkLogics link)
         {
-            _source = info.Source;
-            info.Source = null;
-            _destination = info.Destination;
-            info.Destination = null;
+            _source = link.Source;
+            _destination = link.Destination;
         }
     }
 }

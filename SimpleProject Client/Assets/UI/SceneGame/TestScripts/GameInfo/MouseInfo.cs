@@ -2,7 +2,7 @@
 
 namespace SimpleProject.Sce
 {
-    public enum HelperMouseState
+    public enum MouseState
     {
         Nope,
         Down,
@@ -11,23 +11,23 @@ namespace SimpleProject.Sce
     }
     public class MouseButtonState
     {
-        HelperMouseState _state;
+        MouseState _state;
         public void Set(bool isPressed)
         {
             if (isPressed)
             {
                 switch (_state)
                 {
-                    case HelperMouseState.Pressed:
+                    case MouseState.Pressed:
                         break;
-                    case HelperMouseState.Down:
-                        _state = HelperMouseState.Pressed;
+                    case MouseState.Down:
+                        _state = MouseState.Pressed;
                         break;
-                    case HelperMouseState.Nope:
-                        _state = HelperMouseState.Down;
+                    case MouseState.Nope:
+                        _state = MouseState.Down;
                         break;
-                    case HelperMouseState.Up:
-                        _state = HelperMouseState.Down;
+                    case MouseState.Up:
+                        _state = MouseState.Down;
                         break;
                 }
             }
@@ -35,21 +35,21 @@ namespace SimpleProject.Sce
             {
                 switch (_state)
                 {
-                    case HelperMouseState.Nope:
+                    case MouseState.Nope:
                         break;
-                    case HelperMouseState.Up:
-                        _state = HelperMouseState.Nope;
+                    case MouseState.Up:
+                        _state = MouseState.Nope;
                         break;
-                    case HelperMouseState.Pressed:
-                        _state = HelperMouseState.Up;
+                    case MouseState.Pressed:
+                        _state = MouseState.Up;
                         break;
-                    case HelperMouseState.Down:
-                        _state = HelperMouseState.Up;
+                    case MouseState.Down:
+                        _state = MouseState.Up;
                         break;
                 }
             }
         }
-        public HelperMouseState Get()
+        public MouseState Get()
         {
             return _state;
         }
