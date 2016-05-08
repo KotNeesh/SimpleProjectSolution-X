@@ -22,16 +22,19 @@ namespace SimpleProject.Sce
         private Sprite LinkSprite;
         private Sprite ShearsSprite;
 
+        private bool _isDrawing;
+
         public void Start()
         {
-            LinkSprite = Resources.Load("LinkSprite", typeof(Sprite)) as Sprite;
+            // Customly set the pivot
+            LinkSprite = Resources.Load("Arrow", typeof(Sprite)) as Sprite;
             ShearsSprite = Resources.Load("ShearsSprite", typeof(Sprite)) as Sprite;
-            
 
             _instance = new GameObject("LinkSpriteInstance");
             _instance.AddComponent<SpriteRenderer>();
             _sprRenderer = _instance.GetComponent<SpriteRenderer>();
-            _instance.SetActive(false);
+
+            Visible(true);
         }
         
         private void SetSpite(LinkState state)
@@ -47,21 +50,40 @@ namespace SimpleProject.Sce
 
         public void Draw(DragInfo drag, LinkState state)
         {
-            //if (state = LinkState.Link)
+            if (_instance == null)
+                Debug.Log("null instance");
+            if (!_isDrawing)
+                Visible(true);
 
+            SetSpite(state);
+            UpdateSpriteTransform(drag.GetPosSource(), drag.GetPosDestination());
+        }
 
-            //Vector2 SourcePos = drag.GetPosSource();
-            //Vector2 DestinationPos = drag.GetPosDestination();
+        public void NotDraw()
+        {
+            if (!_isDrawing)
+                return;
 
-            //var _position = new Vector3(SourcePos.x, SourcePos.y, 0f);
-            //var _rotation = Quaternion.Euler(0f, 0f, CalculateAngle(SourcePos, DestinationPos));
+            Visible(false);
+            _isDrawing = false;
+        }
 
-            //float scaleNumber = CalculateScale(SourcePos, DestinationPos, PixPerUnit, PixWidth);
-            //var _scale = new Vector3(scaleNumber, scaleNumber, 0);
+        private void Visible(bool isVisible)
+        {
+            _instance.SetActive(isVisible);
+        }
 
-            //_instance.transform.position = _position;
-            //_instance.transform.rotation = _rotation;
-            //_instance.transform.localScale = _scale;
+        void UpdateSpriteTransform(Vector2 SourcePos, Vector2 DestinationPos)
+        {
+            var _position = new Vector3(SourcePos.x, SourcePos.y, 0f);
+            var _rotation = Quaternion.Euler(0f, 0f, CalculateAngle(SourcePos, DestinationPos));
+
+            float scaleNumber = CalculateScale(SourcePos, DestinationPos, _pixelsPerUnit, _width);
+            var _scale = new Vector3(scaleNumber, scaleNumber, 0);
+
+            _instance.transform.position = _position;
+            _instance.transform.rotation = _rotation;
+            _instance.transform.localScale = _scale;
         }
 
         float CalculateAngle(Vector2 start, Vector2 end)
@@ -73,15 +95,14 @@ namespace SimpleProject.Sce
             return rotZ;
         }
 
-        float CalculateScale(Vector2 start, Vector2 end, int pixPerUnit, int pixWidth)
+        float CalculateScale(Vector2 start, Vector2 end, float pixPerUnit, float pixWidth)
         {
-            return 0;
-            //var difference = start - end;
-            //float vectorLength = difference.magnitude;
+            var difference = start - end;
+            float vectorLength = difference.magnitude;
 
-            //float scaleNumber = vectorLength * PixPerUnit / PixWidth;
+            float scaleNumber = vectorLength * _pixelsPerUnit / _width;
 
-            //return scaleNumber;
+            return scaleNumber;
         }
 
     }

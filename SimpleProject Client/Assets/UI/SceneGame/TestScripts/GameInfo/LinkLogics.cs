@@ -51,8 +51,6 @@ namespace SimpleProject.Sce
             return m;
         }
 
-        
-
         private void Clear()
         {
             _stater.SetPressed(false);

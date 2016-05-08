@@ -11,7 +11,7 @@ namespace SimpleProject.Sce
         
 
         private MouseInfo _mouse = new MouseInfo();
-        private LinkManager _linkManager = new LinkManager();
+        public LinkManager _linkManager;
         private GameMap _map;
 
         private Vector2 GetMousePos()
@@ -24,7 +24,6 @@ namespace SimpleProject.Sce
 
         public void Start()
         {
-            
         }
 
         public void UpdateMouse()
@@ -39,7 +38,7 @@ namespace SimpleProject.Sce
             GameObject obj = GetFocusObject();
             if (obj != null)
                 w = obj.GetComponent<SimplusWrapper>();
-            _linkManager.Update(w, _mouse);
+            _linkManager.UpdateDraw(w, _mouse);
         }
 
         public GameObject GetFocusObject()
