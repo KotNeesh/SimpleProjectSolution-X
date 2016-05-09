@@ -10,13 +10,18 @@ namespace SimpleProject.Sce
         public GUISign Sign;
         public GUIChat Chat;
         public GUIProfile Profile;
-        private IScenario _scenario = new Scenario();
 
-        private bool _isSignIn = false;
+        //ISceneScenario
+        private SceneScenario _sceneScenario = new SceneScenario();
+
         public IScenario GetScenario()
         {
-            return _scenario;
+            return ((ISceneScenario)_sceneScenario).GetScenario();
         }
+
+
+
+        private bool _isSignIn = false;
 
         public void SetStateSignIn(bool isSignIn)
         {
@@ -33,19 +38,23 @@ namespace SimpleProject.Sce
         {
         }
 
-        void ISceneMenuMessages.Set(MessageChat message)
+
+        //ISceneMenuMessages
+        void ISceneMenuMessages.SetMessage(MessageChat message)
         {
             Chat.Set(message);
         }
 
-        void ISceneMenuMessages.Set(MessageAccount message)
+        void ISceneMenuMessages.SetMessage(MessageAccount message)
         {
             Sign.Set(message);
         }
 
-        void ISceneMenuMessages.Set(MessageProfile message)
+        void ISceneMenuMessages.SetMessage(MessageProfile message)
         {
             Profile.Set(message);
         }
+
+
     }
 }

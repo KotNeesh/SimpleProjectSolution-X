@@ -15,20 +15,20 @@ namespace SimpleProject
     sealed class Server
     {
         MessagesManager _messagesManager;
-        SceneServerMenu _scene;
+        SceneServerMenu _sceneMenu;
+        SceneServerGame _sceneGame;
         NetworkServerMachine _network;
         ScenarioMachine _scenario;
         ConsoleCtrl cc;
         public Server()
         {
-            _scene = new SceneServerMenu();
-           _messagesManager = new MessagesManager();
+            _sceneMenu = new SceneServerMenu();
+            _sceneGame = new SceneServerGame();
+            _messagesManager = new MessagesManager();
             _network = new NetworkServerMachine(_messagesManager);
             cc = new ConsoleCtrl();
-            ParametersServer p = new ParametersServer(_messagesManager, _scene);
+            Parameters p = new Parameters(_sceneMenu, _sceneGame, _messagesManager);
             _scenario = new ScenarioMachine(p);
-            _scenario.AddScenario(_messagesManager);
-            _scenario.AddScenario(_scene);
         }
         public void Start()
         {

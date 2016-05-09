@@ -66,7 +66,7 @@ namespace SimpleProject.Net
         {
             while (true)
             {
-                IMessage m = _messagesManager.Get();
+                IMessage m = _messagesManager.GetMessage();
                 if (m == null) break;
                 Packet p = null;
                 _packer.CreatePacket(ref p, m);
@@ -107,7 +107,7 @@ namespace SimpleProject.Net
                     if (s == PacketState.Ok)
                     {
                         ((MessageBase)m).Users.Add(user);
-                        _messagesManager.Set(m);
+                        _messagesManager.SetMessage(m);
                         user.PacketReceive.Clear();
                     }
                     else if (s == PacketState.NotReady) break;

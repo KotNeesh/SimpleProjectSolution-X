@@ -18,7 +18,7 @@ namespace SimpleProject.Comm
         void ICommand.Do(IParameters parameters)
         {
             IParametersMessagesManagerScenario p = parameters as IParametersMessagesManagerScenario;
-            p.Get().Set(_message);
+            p.GetMessagesManagerScenario().SetMessage(_message);
         }
     }
 }

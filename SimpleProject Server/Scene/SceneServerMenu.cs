@@ -12,26 +12,27 @@ namespace SimpleProject.Sce
     Обрабатывает события в меню.
     </summary>
     */
-    class SceneServerMenu : IScenario, ISceneMenuMessages
+    class SceneServerMenu : ISceneMenuMessages
     {
-        Scenario _scenario;
+        
         DataSet _data;
         public SceneServerMenu()
         {
-            _scenario = new Scenario();
             _data = new DataSet();
         }
-        public ICommand Get()
+
+        //ISceneScenario
+        private SceneScenario _sceneScenario = new SceneScenario();
+
+        public IScenario GetScenario()
         {
-            return ((IScenario)_scenario).Get();
+            return ((ISceneScenario)_sceneScenario).GetScenario();
         }
 
-        public void Set(ICommand command)
-        {
-            ((IScenario)_scenario).Set(command);
-        }
 
-        void ISceneMenuMessages.Set(MessageChat message)
+
+        //ISceneMenuMessages
+        void ISceneMenuMessages.SetMessage(MessageChat message)
         {
             IUserProfile user = message.Users[0] as IUserProfile;
             //if (user.Nick == String.Empty) return;
@@ -39,10 +40,10 @@ namespace SimpleProject.Sce
             message.Line = DateTime.Now.ToString("T") + "  <<" + user.Nick + ">>:  " + message.Line;
             message.Users.Clear();
             ICommand c = new CommandSendMessageNetwork(message);
-            _scenario.Set(c);
+            GetScenario().Set(c);
         }
 
-        void ISceneMenuMessages.Set(MessageAccount message)
+        void ISceneMenuMessages.SetMessage(MessageAccount message)
         {
             MessageAccount m;
             bool success = false;
@@ -63,7 +64,7 @@ namespace SimpleProject.Sce
                     MessageProfile mm = new MessageProfile(user.Nick, 0);
                     mm.Users.Add(message.Users[0]);
                     ICommand cc = new CommandSendMessageNetwork(mm);
-                    _scenario.Set(cc);
+                    GetScenario().Set(cc);
                 }
             }
             else if (message.State == MessageAccount.StateType.SignOut)
@@ -82,9 +83,9 @@ namespace SimpleProject.Sce
             m = new MessageAccount(message.State, success);
             m.Users.Add(message.Users[0]);
             ICommand c = new CommandSendMessageNetwork(m);
-            _scenario.Set(c);
+            GetScenario().Set(c);
         }
-        void ISceneMenuMessages.Set(MessageProfile message)
+        void ISceneMenuMessages.SetMessage(MessageProfile message)
         {
             //nothing
         }

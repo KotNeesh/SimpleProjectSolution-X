@@ -9,14 +9,6 @@ namespace SimpleProject
 {
     using TypeID = Byte;
 
-    [Serializable]
-    public class XXX
-    {
-        private int i1;
-        private int i2;
-
-        
-    }
     /**
     <summary> 
     Запускает сервер.

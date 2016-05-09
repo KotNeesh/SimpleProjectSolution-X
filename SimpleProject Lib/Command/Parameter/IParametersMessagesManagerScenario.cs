@@ -4,6 +4,6 @@ namespace SimpleProject.Comm
 {
     public interface IParametersMessagesManagerScenario
     {
-        IMessagesManagerScenario Get();
+        IMessagesManagerScenario GetMessagesManagerScenario();
     }
 }

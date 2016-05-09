@@ -1,4 +1,5 @@
-﻿
+﻿using SimpleProject.Comm;
+
 namespace SimpleProject.Mess
 {
     /**
@@ -8,6 +9,7 @@ namespace SimpleProject.Mess
     */
     public interface IMessagesManagerScenario
     {
-        void Set(IMessage message);
+        void SetMessage(IMessage message);
+        IScenario GetScenario();
     }
 }

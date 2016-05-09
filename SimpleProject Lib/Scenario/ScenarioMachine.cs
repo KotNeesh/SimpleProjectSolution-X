@@ -21,12 +21,10 @@ namespace SimpleProject.Comm
         public ScenarioMachine(IParameters parameters)
         {
             _parameters = parameters;
-            _scenarios = new List<IScenario>();
+            _scenarios = _parameters.GetAllScenario();
         }
-        public void AddScenario(IScenario scenario)
-        {
-            _scenarios.Add(scenario);
-        }
+
+
         protected override bool Init()
         {
             return true;

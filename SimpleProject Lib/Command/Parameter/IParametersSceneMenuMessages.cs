@@ -4,6 +4,6 @@ namespace SimpleProject.Comm
 {
     public interface IParametersSceneMenuMessages
     {
-        ISceneMenuMessages Get();
+        ISceneMenuMessages GetSceneMenuMessages();
     }
 }

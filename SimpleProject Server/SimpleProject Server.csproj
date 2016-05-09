@@ -61,13 +61,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command\Parameter\ParametersServer.cs" />
     <Compile Include="Database\DataSet.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Scene\SceneServerGame.cs" />
     <Compile Include="Scene\SceneServerMenu.cs" />
     <Compile Include="System\ConsoleCtrl.cs" />
     <Compile Include="Network\NetworkServerMachine.cs" />

@@ -1,53 +1,51 @@
-﻿//using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using UnityEngine;
 
-//namespace SimpleProject.Sce
-//{
-//    public class GameManager : MonoBehaviour
-//    {
-//        GameMap _map;
-//        public GUIArrow Arrow;
-//        GameController _controller = new GameController();
-//        void Start()
-//        {
-//            _map = new GameMap(_controller);
-//        }
-       
-    //        private Vector2 GetMousePos()
-    //        {
-    //            Vector2 pos;
-    //            pos = Input.mousePosition;
-    //            pos.y = Screen.height - pos.y;
-    //            return pos;
-    //        }
-    //        public void OnGUI()
-    //        {
+namespace SimpleProject.Sce
+{
+    class GameManager : MonoBehaviour
+    {
+        private MouseManager _mouse = new MouseManager();
+        public LinkManager _linkManager;
+        public GameMap _map;
 
-    //            _controller.GetMouse().Pos = GetMousePos();
-    //            _controller.GetMouse().State.Set(Input.GetMouseButton(0));
+        public void UpdateLink()
+        {
 
-//            _controller.GetLink().Focus = _map.FindFocusSimplus();
-//            _controller.GetLink().Update(_controller.GetMouse().State.Get());
+            Simplus simplus = _map.GetFocusedSimplus(_mouse.Pos);
+ 
+            _linkManager.UpdateDraw(simplus, _mouse);
+        }
 
+        //public GameObject GetFocusObject()
+        //{
+        //    _map
+        //    //return _mouse.MouseOver();
+        //    //Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+        //    //RaycastHit hit;
+        //    //Vector3 mouseVecFar = new Vector3(mousePos.x, mousePos.y, -100);
+        //    //Vector3 mouseVecCls = new Vector3(mousePos.x, mousePos.y, 100);
+        //    ////Ray ray = new Ray(mouseVec, Vector3.forward);
+        //    //Physics.Raycast(mouseVecFar, mouseVecCls, out hit);
+        //    //Debug.DrawLine(mouseVecFar, mouseVecCls);
+        //    ////RaycastHit hit = Physics.Raycast(mousePos, Vector2.right, LayerMask.NameToLayer("Simplus"));
+        //    //if (hit.collider != null)
+        //    //{
+        //    //    return hit.collider.transform.gameObject;
+        //    //}
+        //    //Debug.Log("hit == null");
+        //    //return null;
+        //}
 
-//            _map.Draw();
+        public void Update()
+        {
+            _mouse.Update();
+            UpdateLink();
+        }
 
-//            MessageLink msg = _controller.GetLink().GetMessage();
-//            _map.SetMessage(msg);
-
-//            if (_controller.GetLink().Source != null && _controller.GetLink().Focus != _controller.GetLink().Source && _controller.GetLink().Destination == null)
-//            {
-//                Arrow.SetSource(_controller.GetLink().Source);
-
-//                Arrow.SetDestination(GetMousePos());
-
-//                Arrow.SetActive(true);
-//            }
-//            else
-//            {
-//                Arrow.SetActive(false);
-//            }
-            
-//        }
-//    }
-//}
+    }
+}

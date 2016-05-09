@@ -8,7 +8,8 @@ namespace SimpleProject
 {
     public class Client : MonoBehaviour
     {
-        public SceneClientMenu Menu;
+        public SceneClientMenu SceneMenu;
+        public SceneClientGame SceneGame;
         MessagesManager _messagesManager;
         NetworkClientMachine _network;
         ScenarioMachine _scenario;
@@ -17,10 +18,8 @@ namespace SimpleProject
         {
             _messagesManager = new MessagesManager();
             _network = new NetworkClientMachine(_messagesManager);
-            ParametersClient p = new ParametersClient(_messagesManager, Menu);
+            Parameters p = new Parameters(SceneMenu, SceneGame, _messagesManager);
             _scenario = new ScenarioMachine(p);
-            _scenario.AddScenario(_messagesManager);
-            _scenario.AddScenario(Menu.GetScenario());
             _network.Start();
             _scenario.Start();
         }

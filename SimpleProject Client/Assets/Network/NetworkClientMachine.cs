@@ -21,6 +21,10 @@ namespace SimpleProject.Net
         IUserNetwork _server;
         IPAddress _ip;
         private IMessagesManagerNetwork _messagesManager;
+
+        private Unpacker _unpacker = new Unpacker();
+        private Packer _packer = new Packer();
+
         public NetworkClientMachine(IMessagesManagerNetwork messagesManager)
         {
             _isConnected = false;
@@ -75,10 +79,10 @@ namespace SimpleProject.Net
         {
             while (true)
             {
-                IMessage m = _messagesManager.Get();
+                IMessage m = _messagesManager.GetMessage();
                 if (m == null) break;
                 Packet p = null;
-                RegisterPacker.CreatePacket(ref p, m);
+                _packer.CreatePacket(ref p, m);
                 _server.PacketsSend.Enqueue(p);
             }
             Network.Send(_server);
@@ -89,10 +93,10 @@ namespace SimpleProject.Net
             {
                 Network.Receive(_server);
                 IMessage m = null;
-                PacketState s = RegisterUnpacker.CreateMessage(ref m, _server.PacketReceive);
+                PacketState s =  _unpacker.CreateMessage(ref m, _server.PacketReceive);
                 if (s == PacketState.Ok)
                 {
-                    _messagesManager.Set(m);
+                    _messagesManager.SetMessage(m);
                     _server.PacketReceive.Clear();
                 }
                 else if (s == PacketState.NotReady) return;

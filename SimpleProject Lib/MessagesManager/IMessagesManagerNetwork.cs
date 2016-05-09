@@ -7,7 +7,7 @@
     */
     public interface IMessagesManagerNetwork
     {
-        void Set(IMessage message);
-        IMessage Get();
+        void SetMessage(IMessage message);
+        IMessage GetMessage();
     }
 }

@@ -7,10 +7,10 @@ namespace SimpleProject.Sce
     Интерфейс обработки сообщений меню сценой
     </summary>
     */
-    public interface ISceneMenuMessages
+    public interface ISceneMenuMessages : ISceneScenario
     {
-        void Set(MessageChat message);
-        void Set(MessageAccount message);
-        void Set(MessageProfile message);
+        void SetMessage(MessageChat message);
+        void SetMessage(MessageAccount message);
+        void SetMessage(MessageProfile message);
     }
 }

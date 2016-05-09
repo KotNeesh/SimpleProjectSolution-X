@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SimpleProject.Comm;
 
 namespace SimpleProject.Mess
@@ -11,7 +12,7 @@ namespace SimpleProject.Mess
     для которых находит команду для исполнения сеценарной машиной. 
     </summary>
     */
-    public class MessagesManager : IScenario, IMessagesManagerNetwork, IMessagesManagerScenario
+    public class MessagesManager : IMessagesManagerNetwork, IMessagesManagerScenario
     {
         private Scenario _scenario;
         private Queue<IMessage> _messagesNetwork;
@@ -21,7 +22,7 @@ namespace SimpleProject.Mess
             _messagesNetwork = new Queue<IMessage>();
         }
 
-        void IMessagesManagerNetwork.Set(IMessage message)
+        void IMessagesManagerNetwork.SetMessage(IMessage message)
         {
             
             if (message != null)
@@ -30,12 +31,12 @@ namespace SimpleProject.Mess
                 if (c != null)
                 {
                     ICommand cs = new CommandProcessMessageSmart(c, message);
-                    this.Set(cs);
+                    _scenario.Set(cs);
                 }
             }
         }
 
-        IMessage IMessagesManagerNetwork.Get()
+        IMessage IMessagesManagerNetwork.GetMessage()
         {
             if (_messagesNetwork.Count == 0) return null;
             else
@@ -49,7 +50,7 @@ namespace SimpleProject.Mess
             }
         }
 
-        void IMessagesManagerScenario.Set(IMessage message)
+        void IMessagesManagerScenario.SetMessage(IMessage message)
         {
             if (message != null)
             {
@@ -60,14 +61,9 @@ namespace SimpleProject.Mess
             }
         }
 
-        public ICommand Get()
+        public IScenario GetScenario()
         {
-            return ((IScenario)_scenario).Get();
-        }
-
-        public void Set(ICommand command)
-        {
-            ((IScenario)_scenario).Set(command);
+            return _scenario;
         }
     }
 
