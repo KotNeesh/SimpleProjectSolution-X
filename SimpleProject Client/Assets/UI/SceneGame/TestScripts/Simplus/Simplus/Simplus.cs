@@ -9,11 +9,16 @@ namespace SimpleProject.Sce
     {
         public SimplusWrapper _wrapper;
 
+        public GameObject LinkPrefab;
+
         private SimplusLink _link;
 
         public void CreateLink(Simplus destination)
         {
-            _link = new SimplusLink(this, destination);
+            //_link = new SimplusLink(this, destination);
+            GameObject linkObj = Instantiate(LinkPrefab);
+            _link = linkObj.GetComponent<SimplusLink>();
+            _link.SetSimplusLinkData(this, destination);
         }
         //public bool IsFocused(Vector2 focusPos)
         //{

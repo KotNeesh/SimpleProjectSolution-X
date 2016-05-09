@@ -8,22 +8,32 @@ namespace SimpleProject.Sce
 {
     public class SimplusLinkWrapper : MonoBehaviour
     {
-        public SimplusLinkWrapper(Vector2 source, Vector2 destination)
+        public void SetSimplusLinkWrapperData(Vector2 source, Vector2 destination)
         {
+            Debug.Log("SimplusLinkWrapper constructor");
             _source = source;
             _destination = destination;
             _current = destination;
 
-            _partusContainer = new List<GameObject>();
         }
 
         public void Start()
         {
+            _partusContainer = new List<GameObject>();
+
+            Debug.Log("Simpl Link Start");
             LinkSprite = Resources.Load("LinkPart", typeof(Sprite)) as Sprite;
 
             _pixelsPerUnit = LinkSprite.pixelsPerUnit;
             _width = LinkSprite.rect.width;
+
+            _instance = new GameObject("instance");
+            _instance.AddComponent<SpriteRenderer>().sprite = LinkSprite;
+            _instance.SetActive(false);
+            InvalidateTime();
         }
+
+        public float Speed = 1f;
 
         private Vector2 _source;
         private Vector2 _destination;
@@ -38,13 +48,24 @@ namespace SimpleProject.Sce
 
         private SimplusLinkActionState _state;
 
-        private float _resetTim;
+        private GameObject _instance;
 
-        public float FlyInterval = 1f;
+        private float _resetTime = 0f;
+
+        //public float FlyInterval = 1f;
+
+        private float _timeToAct = 0f;
+
+        private float _curLinkPos;
 
         private float _time()
         {
             return Time.time - _resetTime;
+        }
+
+        void CalcLinkPos()
+        {
+            _curLinkPos = _time() / _timeToAct * Speed;
         }
 
         public void SetAnimationState(SimplusLinkActionState state)
@@ -52,28 +73,49 @@ namespace SimpleProject.Sce
             _state = state;
         }
 
-        void ResetTime()
+        void SetTimeData()
         {
+            Debug.Log("set");
             _resetTime = Time.time;
+            _timeToAct = (_destination - _source).magnitude / Speed;
+        }
+
+        void InvalidateTime()
+        {
+            _resetTime = 0f;
+            _timeToAct = 0f;
+        }
+
+        bool IsTimeValid()
+        {
+            return (_resetTime != 0 && _timeToAct != 0);
         }
 
         public void Update()
         {
-            Debug.Log("Update");
+            //Debug.Log("Update");
             if (_state == SimplusLinkActionState.Transporting)
             {
 
             }
-
+            
             if (_state == SimplusLinkActionState.Flying)
             {
-                Debug.Log("flying");
-                if (_time() < FlyInterval)
+                //Debug.Log("flying");
+                if (!IsTimeValid())
                 {
-                    Debug.Log("<");
-                    LaunchPart();
-                    ResetTime();
+                    Debug.Log("!IsTimeValid");
+                    SetTimeData();
+                    _instance.SetActive(true);
                 }
+                if (_curLinkPos > 1f)
+                {
+                    Debug.Log("_curLinkPos > 1f");
+                    _state = SimplusLinkActionState.Transporting;
+                    InvalidateTime();
+                }
+                CalcLinkPos();
+                _instance.transform.position = Vector2.Lerp(_source, _destination, _curLinkPos);
             }
         }
 
