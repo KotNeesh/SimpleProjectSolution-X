@@ -79,6 +79,9 @@
     <Compile Include="Assets\UI\Containers\Case.cs" />
     <Compile Include="Assets\UI\Containers\IMessageContainer.cs" />
     <Compile Include="Assets\UI\Containers\MessageContainer.cs" />
+    <Compile Include="Assets\UI\SceneGame\Simplus\Obj2D\Circle.cs" />
+    <Compile Include="Assets\UI\SceneGame\Simplus\Obj2D\IObj2D.cs" />
+    <Compile Include="Assets\UI\SceneGame\Simplus\Obj2D\Point.cs" />
     <Compile Include="_outdated\Arrow\GUIArrow.cs" />
     <Compile Include="_outdated\Controller\GameController.cs" />
     <Compile Include="_outdated\Controller\LinkInfo.cs" />
@@ -96,10 +99,7 @@
     <Compile Include="Assets\UI\SceneGame\GameInfo\LinkManager.cs" />
     <Compile Include="Assets\UI\SceneGame\GameInfo\MessageLink.cs" />
     <Compile Include="Assets\UI\SceneGame\GameInfo\MouseManager.cs" />
-    <Compile Include="Assets\UI\SceneGame\Obj2D\Circle.cs" />
-    <Compile Include="Assets\UI\SceneGame\Obj2D\DragInfo.cs" />
-    <Compile Include="Assets\UI\SceneGame\Obj2D\IObj2D.cs" />
-    <Compile Include="Assets\UI\SceneGame\Obj2D\Point.cs" />
+    <Compile Include="Assets\UI\SceneGame\GameInfo\DragInfo.cs" />
     <Compile Include="Assets\UI\SceneGame\Simplus\Link\SimplusLinkActionStater.cs" />
     <Compile Include="Assets\UI\SceneGame\Simplus\Simplus\ISimplusActionStater.cs" />
     <Compile Include="Assets\UI\SceneGame\Simplus\Simplus\Simplus.cs" />

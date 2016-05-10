@@ -3,24 +3,17 @@ using UnityEngine;
 
 namespace SimpleProject.Sce
 {
-    public class Circle : MonoBehaviour, IObj2D
+    public class Circle : IObj2D
     {
         protected Vector2 _pos;
         protected float _radius;
 
-        public void Start()
-        {
-            GameObject circleObject = gameObject;
-            _pos = circleObject.transform.position;
-            Sprite spr = circleObject.GetComponent<SpriteRenderer>().sprite;
-            _radius = (spr.texture.width / 2) / spr.pixelsPerUnit * 0.8f;
-        }
 
-        //public Circle(Vector2 pos, float radius)
-        //{
-        //    _pos = pos;
-        //    _radius = radius;
-        //}
+        public Circle(Vector2 pos, float radius)
+        {
+            _pos = pos;
+            _radius = radius;
+        }
 
         public void SetRadius(float radius)
         {

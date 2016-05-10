@@ -9,12 +9,17 @@ namespace SimpleProject.Sce
     public class SimplusWrapper : MonoBehaviour, IObj2D, ISimplusActionStater
     {
         private SimplusActionStater stater = new SimplusActionStater();
-        public Circle _circle;
+        private Circle _circle;
         public GameObject _obj;
         private SimplusAnimationManager _animManager;
 
         public void Start()
         {
+            GameObject circleObject = gameObject;
+            Vector2 pos = circleObject.transform.position;
+            Sprite spr = circleObject.GetComponent<SpriteRenderer>().sprite;
+            float radius = (spr.texture.width / 2) / spr.pixelsPerUnit * 0.8f;
+            _circle = new Circle(pos, radius);
             _animManager = new SimplusAnimationManager(_obj.GetComponent<Animator>());
         }
 

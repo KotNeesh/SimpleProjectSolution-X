@@ -74,6 +74,15 @@
     <Compile Include="Message\TypeID\HelperTypeID.cs" />
     <Compile Include="Message\TypeID\Menu\MessageProfile.cs" />
     <Compile Include="Network\Packer.cs" />
+    <Compile Include="Simplus\HP\ISimplusHPClient.cs" />
+    <Compile Include="Simplus\HP\ISimplusHP.cs" />
+    <Compile Include="Simplus\HP\ISimplusHPServer.cs" />
+    <Compile Include="Simplus\HP\SimplusHP.cs" />
+    <Compile Include="Simplus\Info\ISimplusInfo.cs" />
+    <Compile Include="Simplus\Info\ISimplusInfoClient.cs" />
+    <Compile Include="Simplus\Info\ISimplusInfoServer.cs" />
+    <Compile Include="Simplus\Info\SimplusInfo.cs" />
+    <Compile Include="Simplus\Link\Info\SimplusLinkInfo.cs" />
     <Compile Include="_outdated\Packer\PackerChat.cs" />
     <Compile Include="Message\TypeID\ITypeID.cs" />
     <Compile Include="_outdated\Packer\PackerProfile.cs" />
@@ -102,7 +111,9 @@
     <Compile Include="User\UserNetwork.cs" />
     <Compile Include="User\UserProfile.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Simplus\ContainerLink\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
