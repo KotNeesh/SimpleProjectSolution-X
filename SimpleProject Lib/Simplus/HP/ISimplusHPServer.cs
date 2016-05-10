@@ -5,7 +5,9 @@ using System.Text;
 
 namespace SimpleProject.Sce
 {
-    public class SimplusContainer
+    interface ISimplusHPServer : ISimplusHP
     {
+        bool Attack(int HP);
+        void Defense(int HP);
     }
 }

@@ -5,7 +5,9 @@ using System.Text;
 
 namespace SimpleProject.Sce
 {
-    public class SimplusContainer
+    interface ISimplusHP
     {
+        int Cur { get; }
+        int Max { get; }
     }
 }

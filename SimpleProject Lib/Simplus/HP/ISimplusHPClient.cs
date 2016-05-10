@@ -5,7 +5,8 @@ using System.Text;
 
 namespace SimpleProject.Sce
 {
-    public class SimplusContainer
+    interface ISimplusHPClient : ISimplusHP
     {
+        void Inc(int HP);
     }
 }

@@ -5,7 +5,8 @@ using System.Text;
 
 namespace SimpleProject.Sce
 {
-    public class SimplusContainer
+    interface ISimplusInfoClient : ISimplusInfo
     {
+        void IncHP(int HP, SimplusInfo source);
     }
 }

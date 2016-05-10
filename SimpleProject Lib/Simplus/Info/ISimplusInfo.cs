@@ -5,7 +5,10 @@ using System.Text;
 
 namespace SimpleProject.Sce
 {
-    public class SimplusContainer
+    interface ISimplusInfo
     {
+        SimplusParty Party { get; }
+        SimplusHP HP { get; }
+        IObj2D Obj2D { get; }
     }
 }

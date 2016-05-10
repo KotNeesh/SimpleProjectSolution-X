@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SimpleProject.Sce
 {
-    public class SimplusContainer
+    public class ContainerLink
     {
     }
 }
