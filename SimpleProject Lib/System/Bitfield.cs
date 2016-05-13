@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace SimpleProject.Sys
+namespace SimpleTeam.Sys
 {
     [global::System.AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
     public sealed class BitfieldLengthAttribute : Attribute

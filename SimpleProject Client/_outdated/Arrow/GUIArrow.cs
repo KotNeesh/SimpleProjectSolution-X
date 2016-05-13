@@ -4,7 +4,7 @@
 //using UnityEngine;
 //using UnityEngine.UI;
 
-//namespace SimpleProject.Sce
+//namespace SimpleTeam.Sce
 //{
 //    public class GUIArrow : MonoBehaviour
 //    {

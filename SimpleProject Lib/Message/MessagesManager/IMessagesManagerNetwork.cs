@@ -1,4 +1,4 @@
-﻿namespace SimpleProject.Mess.Man
+﻿namespace SimpleTeam.Mess.Man
 {
     /**
     <summary> 

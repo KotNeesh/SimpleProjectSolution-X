@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using SimpleProject.Comm;
-using SimpleProject.MyID.Comm;
-using SimpleProject.Comm.Scenar;
+using SimpleTeam.Comm;
+using SimpleTeam.GameOneID.Comm;
+using SimpleTeam.Comm.Scenar;
 
-namespace SimpleProject.Mess.Man
+namespace SimpleTeam.Mess.Man
 {
     /**
     <summary> 

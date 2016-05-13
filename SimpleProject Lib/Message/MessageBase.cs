@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using SimpleProject.Use;
+using SimpleTeam.Use;
 using System;
 
-namespace SimpleProject.Mess
+namespace SimpleTeam.Mess
 {
     /**
     <summary>

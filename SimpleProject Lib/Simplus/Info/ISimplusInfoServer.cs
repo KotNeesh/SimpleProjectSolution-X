@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace SimpleProject.Sce
+namespace SimpleTeam.Sce
 {
     interface ISimplusInfoServer : ISimplusInfo
     {

@@ -1,7 +1,7 @@
 ﻿using System.Net.Sockets;
 using System;
 
-namespace SimpleProject.Net
+namespace SimpleTeam.Net
 {
     using SizePacket = UInt16;
     public class NetworkParser

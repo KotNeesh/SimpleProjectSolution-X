@@ -3,7 +3,7 @@
 //using System.Linq;
 //using UnityEngine;
 
-//namespace SimpleProject.Sce
+//namespace SimpleTeam.Sce
 //{
 //    public class Simplus
 //    {

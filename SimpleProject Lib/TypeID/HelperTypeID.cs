@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace SimpleProject.MyID
+namespace SimpleTeam.GameOneID
 {
     using TypeID = Byte;
     /**

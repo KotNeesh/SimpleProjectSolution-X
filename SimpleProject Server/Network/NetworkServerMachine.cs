@@ -2,12 +2,14 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Collections.Generic;
-using SimpleProject.Mess;
-using SimpleProject.Mess.Man;
-using SimpleProject.Sys;
-using SimpleProject.Use;
+using SimpleTeam.Mess;
+using SimpleTeam.Mess.Man;
+using SimpleTeam.Sys;
+using SimpleTeam.Use;
+using SimpleTeam.Serial;
+using SimpleTeam.Serial.DotNet;
 
-namespace SimpleProject.Net
+namespace SimpleTeam.Net
 {
     /**
     <summary> 
@@ -22,8 +24,8 @@ namespace SimpleProject.Net
         private List<IUserNetwork> _clients;
         private IMessagesManagerNetwork _messagesManager;
 
-        private Unpacker _unpacker = new Unpacker();
-        private Packer _packer = new Packer();
+        private IUnpacker _unpacker = new Unpacker();
+        private IPacker _packer = new Packer();
 
         public NetworkServerMachine(IMessagesManagerNetwork messagesManager)
         {

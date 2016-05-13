@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 
-namespace SimpleProject.Sys
+namespace SimpleTeam.Sys
 {
     /**
     <summary>

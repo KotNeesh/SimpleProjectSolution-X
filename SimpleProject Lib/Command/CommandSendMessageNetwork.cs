@@ -1,7 +1,7 @@
-﻿using SimpleProject.Mess;
-using SimpleProject.Comm.Scenar;
+﻿using SimpleTeam.Mess;
+using SimpleTeam.Comm.Scenar;
 
-namespace SimpleProject.Comm
+namespace SimpleTeam.Comm
 {
     /**
     <summary>

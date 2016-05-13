@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
-using SimpleProject.Mess;
+using SimpleTeam.Mess;
+using SimpleTeam.GameOneID.Mess;
 
-namespace SimpleProject.Sce
+namespace SimpleTeam.Sce
 {
     public class GUIAccount : MonoBehaviour
     {

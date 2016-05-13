@@ -1,9 +1,9 @@
-﻿using SimpleProject.Sce;
-using SimpleProject.Mess;
+﻿using SimpleTeam.Sce;
+using SimpleTeam.Mess;
 using System.Collections.Generic;
-using SimpleProject.Mess.Man;
+using SimpleTeam.Mess.Man;
 
-namespace SimpleProject.Comm.Scenar
+namespace SimpleTeam.Comm.Scenar
 {
 
     /**

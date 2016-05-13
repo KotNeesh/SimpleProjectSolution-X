@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 
-namespace SimpleProject.Comm.Scenar
+namespace SimpleTeam.Comm.Scenar
 {
     /**
     <summary>

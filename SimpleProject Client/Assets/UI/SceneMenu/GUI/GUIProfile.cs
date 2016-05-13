@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using SimpleProject.Mess;
-using SimpleProject.Use;
+using SimpleTeam.Mess;
+using SimpleTeam.Use;
+using SimpleTeam.GameOneID.Mess;
 
-namespace SimpleProject.Sce
+namespace SimpleTeam.Sce
 {
     public class GUIProfile : MonoBehaviour
     {

@@ -44,12 +44,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinarySerialization\IPacker.cs" />
+    <Compile Include="BinarySerialization\IUnpacker.cs" />
     <Compile Include="Command\Parameter\IParametersScenar.cs" />
     <Compile Include="Command\Parameter\IParameters.cs" />
     <Compile Include="Command\Parameter\IParametersMessagesManagerScenario.cs" />
     <Compile Include="Command\Parameter\IParametersSceneGameMessages.cs" />
     <Compile Include="Command\Parameter\IParametersSceneMenuMessages.cs" />
     <Compile Include="Command\Parameter\Parameters.cs" />
+    <Compile Include="TypeID\BinarySerialization\My\Packer\Packer.cs" />
+    <Compile Include="TypeID\BinarySerialization\My\Unpacker\Unpacker.cs" />
     <Compile Include="TypeID\Command\Game\CommandProcessMessageGameMap.cs" />
     <Compile Include="TypeID\Command\Game\CommandProcessMessageGamerCommand.cs" />
     <Compile Include="TypeID\Command\Game\CommandProcessMessageGameState.cs" />
@@ -76,7 +80,7 @@
     <Compile Include="TypeID\Message\Menu\MessageChat.cs" />
     <Compile Include="TypeID\HelperTypeID.cs" />
     <Compile Include="TypeID\Message\Menu\MessageProfile.cs" />
-    <Compile Include="Network\Packer.cs" />
+    <Compile Include="BinarySerialization\DotNet\Packer.cs" />
     <Compile Include="Simplus\ContainerLink\ContainerLink.cs" />
     <Compile Include="Simplus\HP\ISimplusHPClient.cs" />
     <Compile Include="Simplus\HP\ISimplusHP.cs" />
@@ -107,7 +111,7 @@
     <Compile Include="TypeID\BinarySerialization\My\Packer\PackerAccount.cs" />
     <Compile Include="Network\Packet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Network\Unpacker.cs" />
+    <Compile Include="BinarySerialization\DotNet\Unpacker.cs" />
     <Compile Include="TypeID\BinarySerialization\My\Unpacker\UnpuckerProfile.cs" />
     <Compile Include="User\IUserProfile.cs" />
     <Compile Include="User\User.cs" />
@@ -120,7 +124,6 @@
     <Compile Include="User\UserProfile.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="TypeID\BinarySerialization\DotNet\" />
     <Folder Include="_outdated\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,25 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using SimpleProject.Net;
-using SimpleProject.Mess;
+using SimpleTeam.Net;
+using SimpleTeam.Mess;
+using SimpleTeam.Serial;
 
-namespace SimpleProject.MyID.Serial
+namespace SimpleTeam.GameOneID.Serial
 {
     using TypeID = Byte;
     /**
     <summary> 
-    Реестр всех распааковщиков пакетов.
+    Реестр всех распаковщиков пакетов.
     </summary>
     */
-    public static class RegisterUnpacker
+    public class RegisterUnpacker
     {
-        private static Dictionary<TypeID, IUnpacker> _dictionary = GetDictionary();
-        private static Dictionary<TypeID, IUnpacker> GetDictionary()
+        private Dictionary<TypeID, IUnpackerMy> _dictionary;
+
+        public RegisterUnpacker()
+        {
+            _dictionary = GetDictionary();
+        }
+        private Dictionary<TypeID, IUnpackerMy> GetDictionary()
         {
             var assemblyType = typeof(RegisterUnpacker);
 
-            var packers = new Dictionary<TypeID, IUnpacker>();
+            var packers = new Dictionary<TypeID, IUnpackerMy>();
             foreach (var type in assemblyType.Assembly.GetTypes())
             {
                 if (!type.IsClass)
@@ -29,9 +35,9 @@ namespace SimpleProject.MyID.Serial
                     continue;
 
 
-                if (typeof(IUnpacker).IsAssignableFrom(type))
+                if (typeof(IUnpackerMy).IsAssignableFrom(type))
                 {
-                    IUnpacker p = Activator.CreateInstance(type) as IUnpacker;
+                    IUnpackerMy p = Activator.CreateInstance(type) as IUnpackerMy;
                     packers.Add(p.Type, p);
                 }
 
@@ -39,28 +45,11 @@ namespace SimpleProject.MyID.Serial
 
             return packers;
         }
-        private static IUnpacker Find(TypeID type)
+        public IUnpackerMy Find(TypeID type)
         {
             if (_dictionary.ContainsKey(type))
                 return _dictionary[type];
             return null;
-        }
-
-        public static PacketState CreateMessage(ref IMessage message, Packet packet)
-        {
-            message = null;
-            if (!packet.IsReady) return PacketState.NotReady;
-            if (packet.Size < sizeof(TypeID)) return PacketState.SizeOut;
-            using (MemoryStream stream = new MemoryStream(packet.GetData()))
-            {
-                if (!stream.CanRead) throw new SystemException("haha");
-                using (BinaryReader reader = new BinaryReader(stream))
-                {
-                    TypeID type = reader.ReadByte();
-                    IUnpacker unpacker = Find(type);
-                    return unpacker.CreateMessage(ref message, reader, packet.Size);
-                }
-            }
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿//using UnityEngine;
 //using System.Collections.Generic;
 
-//namespace SimpleProject.Sce
+//namespace SimpleTeam.Sce
 //{
 //    public class GameMap
 //    {

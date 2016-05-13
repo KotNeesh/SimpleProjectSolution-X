@@ -1,6 +1,6 @@
 ﻿
 
-namespace SimpleProject.Comm.Scenar
+namespace SimpleTeam.Comm.Scenar
 {
     public interface IScenario
     {

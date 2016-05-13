@@ -1,12 +1,13 @@
 ﻿using System.IO;
 using System;
 using System.Runtime.Serialization;
-using SimpleProject.Mess;
+using SimpleTeam.Mess;
 using System.Runtime.Serialization.Formatters.Binary;
+using SimpleTeam.Net;
 
-namespace SimpleProject.Net
+namespace SimpleTeam.Serial.DotNet
 {
-    public class Packer
+    public class Packer:IPacker
     {
         IFormatter formatter;
         public Packer()

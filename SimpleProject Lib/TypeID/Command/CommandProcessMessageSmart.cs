@@ -1,7 +1,7 @@
-﻿using SimpleProject.Mess;
-using SimpleProject.Comm;
+﻿using SimpleTeam.Mess;
+using SimpleTeam.Comm;
 
-namespace SimpleProject.MyID.Comm
+namespace SimpleTeam.GameOneID.Comm
 {
     /**
     <summary>

@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using SimpleProject.Mess;
-using SimpleProject.Comm;
+using SimpleTeam.Mess;
+using SimpleTeam.Comm;
+using SimpleTeam.GameOneID.Mess;
+using SimpleTeam.Comm.Scenar;
 
-namespace SimpleProject.Sce
+namespace SimpleTeam.Sce
 {
     public class GUISign : MonoBehaviour, IGUISign
     {

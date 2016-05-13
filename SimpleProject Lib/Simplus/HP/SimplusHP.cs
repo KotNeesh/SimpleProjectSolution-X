@@ -1,6 +1,6 @@
 ﻿
 
-namespace SimpleProject.Sce
+namespace SimpleTeam.Sce
 {
     public class SimplusHP : ISimplusHPServer, ISimplusHPClient
     {

@@ -1,6 +1,6 @@
-﻿using SimpleProject.Comm.Scenar;
+﻿using SimpleTeam.Comm.Scenar;
 
-namespace SimpleProject.Mess.Man
+namespace SimpleTeam.Mess.Man
 {
     /**
     <summary> 

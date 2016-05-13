@@ -2,11 +2,14 @@
 using System.Threading;
 using System.Net;
 using System.Net.Sockets;
-using SimpleProject.Sys;
-using SimpleProject.Use;
-using SimpleProject.Mess;
+using SimpleTeam.Sys;
+using SimpleTeam.Use;
+using SimpleTeam.Mess;
+using SimpleTeam.Mess.Man;
+using SimpleTeam.Serial;
+using SimpleTeam.Serial.DotNet;
 
-namespace SimpleProject.Net
+namespace SimpleTeam.Net
 {
     /**
     <summary> 
@@ -22,8 +25,8 @@ namespace SimpleProject.Net
         IPAddress _ip;
         private IMessagesManagerNetwork _messagesManager;
 
-        private Unpacker _unpacker = new Unpacker();
-        private Packer _packer = new Packer();
+        private IUnpacker _unpacker = new Unpacker();
+        private IPacker _packer = new Packer();
 
         public NetworkClientMachine(IMessagesManagerNetwork messagesManager)
         {

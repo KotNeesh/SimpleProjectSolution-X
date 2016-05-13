@@ -1,27 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using SimpleProject.Net;
-using SimpleProject.Mess;
+using SimpleTeam.Net;
+using SimpleTeam.Mess;
 
-namespace SimpleProject.MyID.Serial
+namespace SimpleTeam.GameOneID.Serial
 {
-    using SizePacket = UInt16;
+    
     using TypeID = Byte;
     /**
     <summary> 
     Реестр всех упаковщиков сообщений.
     </summary>
     */
-    public static class RegisterPacker
+    public class RegisterPacker
     {
 
-        private static Dictionary<TypeID, IPacker> _dictionary = GetDictionary();
-        private static Dictionary<TypeID, IPacker> GetDictionary()
+        private Dictionary<TypeID, IPackerMy> _dictionary;
+        public RegisterPacker()
+        {
+            _dictionary = GetDictionary();
+        }
+        private Dictionary<TypeID, IPackerMy> GetDictionary()
         {
             var assemblyType = typeof(RegisterPacker);
 
-            var packers = new Dictionary<TypeID, IPacker>();
+            var packers = new Dictionary<TypeID, IPackerMy>();
             foreach (var type in assemblyType.Assembly.GetTypes())
             {
                 if (!type.IsClass)
@@ -31,9 +35,9 @@ namespace SimpleProject.MyID.Serial
                     continue;
 
 
-                if (typeof(IPacker).IsAssignableFrom(type))
+                if (typeof(IPackerMy).IsAssignableFrom(type))
                 {
-                    IPacker p = Activator.CreateInstance(type) as IPacker;
+                    IPackerMy p = Activator.CreateInstance(type) as IPackerMy;
                     packers.Add(p.Type, p);
                 }
                     
@@ -41,30 +45,11 @@ namespace SimpleProject.MyID.Serial
 
             return packers;
         }
-        private static IPacker  Find(TypeID type)
+        public IPackerMy  Find(TypeID type)
         {
             if (_dictionary.ContainsKey(type))
                 return _dictionary[type];
             return null;
-        }
-        public static void CreatePacket(ref Packet packet, IMessage message)
-        {
-            packet = null;
-            using (MemoryStream stream = new MemoryStream())
-            {
-                SizePacket size = 0;
-                using (BinaryWriter writer = new BinaryWriter(stream))
-                {
-                    writer.Write(size); 
-                    writer.Write(message.Type);
-                    IPacker packer = Find(message.Type);
-                    packer.CreatePacket(writer, message);
-                    size = (SizePacket)(stream.Length - sizeof(SizePacket));
-                    stream.Position = 0;
-                    writer.Write(size);
-                    packet =  new Packet(stream.ToArray());
-                }
-            }
         }
     }
 }

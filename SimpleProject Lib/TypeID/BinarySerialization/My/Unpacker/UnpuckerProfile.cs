@@ -1,14 +1,15 @@
 ﻿using System;
 using System.IO;
-using SimpleProject.Mess;
-using SimpleProject.Net;
-using SimpleProject.MyID.Mess;
+using SimpleTeam.Mess;
+using SimpleTeam.Net;
+using SimpleTeam.GameOneID.Mess;
+using SimpleTeam.Serial;
 
-namespace SimpleProject.MyID.Serial
+namespace SimpleTeam.GameOneID.Serial
 {
     using SizePacket = UInt16;
     using TypeID = Byte;
-    public class UnpackerProfile : IUnpacker
+    public class UnpackerProfile : IUnpackerMy
     {
         TypeID ITypeID.Type
         {

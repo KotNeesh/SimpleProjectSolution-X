@@ -1,7 +1,7 @@
-﻿using SimpleProject.Comm;
-using SimpleProject.Mess;
+﻿using SimpleTeam.Comm;
+using SimpleTeam.Mess;
 
-namespace SimpleProject.MyID.Comm
+namespace SimpleTeam.GameOneID.Comm
 {
     public interface ICommandProcessMessage : ITypeID
     {

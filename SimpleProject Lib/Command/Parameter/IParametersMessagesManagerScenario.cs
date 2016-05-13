@@ -1,7 +1,7 @@
 ﻿
-using SimpleProject.Mess.Man;
+using SimpleTeam.Mess.Man;
 
-namespace SimpleProject.Comm.Scenar
+namespace SimpleTeam.Comm.Scenar
 {
     public interface IParametersMessagesManagerScenario
     {

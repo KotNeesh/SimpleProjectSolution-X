@@ -1,12 +1,12 @@
 ﻿using System;
-using SimpleProject.Mess;
+using SimpleTeam.Mess;
 
 using System.IO;
 
-namespace SimpleProject.MyID.Serial
+namespace SimpleTeam.GameOneID.Serial
 {
     using SizePacket = UInt16;
-    public interface IPacker : ITypeID
+    public interface IPackerMy : ITypeID
     {
         void CreatePacket(BinaryWriter writer, IMessage message);
     }

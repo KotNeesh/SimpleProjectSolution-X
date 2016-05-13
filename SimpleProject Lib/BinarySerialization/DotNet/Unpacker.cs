@@ -2,21 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using SimpleProject.Mess;
+using SimpleTeam.Mess;
 using System.Runtime.Serialization.Formatters.Binary;
+using SimpleTeam.Net;
 
-namespace SimpleProject.Net
+namespace SimpleTeam.Serial.DotNet
 {
-    public enum PacketState : Byte
-    {
-        Ok = 0,
-        NotReady = 1,
-        NotFoundType = 2,
-        SizeOut = 3,
-        NotParse = 4
-    }
 
-    public class Unpacker
+
+    public class Unpacker:IUnpacker
     {
         IFormatter formatter;
         public Unpacker()

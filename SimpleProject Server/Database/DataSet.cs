@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Data;
-using SimpleProject.Use;
+using SimpleTeam.Use;
 
-namespace SimpleProject.Data
+namespace SimpleTeam.Data
 {
     /**
     <summary> 
@@ -15,7 +15,7 @@ namespace SimpleProject.Data
         private static string path =Environment.CurrentDirectory +
                                     @"\Database\Database.mdf;";
         private static string pathDebug =
-                                    @"C:\Users\vladlen\Documents\Visual Studio 2015\Projects\C Sharp\SimpleProject-Game\SimpleProject Server\Database\Database.mdf;";
+                                    @"C:\Users\vladlen\Documents\Visual Studio 2015\Projects\C Sharp\SimpleTeam-Game\SimpleTeam Server\Database\Database.mdf;";
         private static string conn =@"Data Source=(LocalDB)\MSSQLLocalDB;" +
                                     @"AttachDbFilename=" +
                                     path +

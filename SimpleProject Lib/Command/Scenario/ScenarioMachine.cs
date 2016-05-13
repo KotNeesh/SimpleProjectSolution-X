@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
-using SimpleProject.Sys;
+using SimpleTeam.Sys;
 
-namespace SimpleProject.Comm.Scenar
+namespace SimpleTeam.Comm.Scenar
 {
 
     /**

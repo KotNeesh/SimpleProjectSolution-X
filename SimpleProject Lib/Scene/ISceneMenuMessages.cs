@@ -1,6 +1,6 @@
-﻿using SimpleProject.MyID.Mess;
+﻿using SimpleTeam.GameOneID.Mess;
 
-namespace SimpleProject.Sce
+namespace SimpleTeam.Sce
 {
     /**
     <summary>

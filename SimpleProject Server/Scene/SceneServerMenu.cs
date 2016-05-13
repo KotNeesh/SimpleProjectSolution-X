@@ -1,11 +1,11 @@
 ﻿using System;
-using SimpleProject.Comm;
-using SimpleProject.Use;
-using SimpleProject.Data;
-using SimpleProject.MyID.Mess;
-using SimpleProject.Comm.Scenar;
+using SimpleTeam.Comm;
+using SimpleTeam.Use;
+using SimpleTeam.Data;
+using SimpleTeam.GameOneID.Mess;
+using SimpleTeam.Comm.Scenar;
 
-namespace SimpleProject.Sce
+namespace SimpleTeam.Sce
 {
     /**
     <summary> 

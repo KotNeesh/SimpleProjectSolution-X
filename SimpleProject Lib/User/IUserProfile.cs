@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace SimpleProject.Use
+namespace SimpleTeam.Use
 {
     public interface IUserProfile
     {

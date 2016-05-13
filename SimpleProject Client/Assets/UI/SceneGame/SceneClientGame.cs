@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
-using SimpleProject.Comm;
-using SimpleProject.Mess;
+using SimpleTeam.Comm;
+using SimpleTeam.Mess;
 using System;
+using SimpleTeam.Comm.Scenar;
+using SimpleTeam.GameOneID.Mess;
 
-namespace SimpleProject.Sce
+namespace SimpleTeam.Sce
 {
     public class SceneClientGame : MonoBehaviour, ISceneGameMessages
     {

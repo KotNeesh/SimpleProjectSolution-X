@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Net.Sockets;
-using SimpleProject.Net;
+using SimpleTeam.Net;
 
-namespace SimpleProject.Use
+namespace SimpleTeam.Use
 {
     /**
     <summary> 

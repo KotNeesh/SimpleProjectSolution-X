@@ -1,7 +1,7 @@
 ﻿using System;
-using SimpleProject.Mess;
+using SimpleTeam.Mess;
 
-namespace SimpleProject.MyID.Mess
+namespace SimpleTeam.GameOneID.Mess
 {
     using TypeID = Byte;
 
