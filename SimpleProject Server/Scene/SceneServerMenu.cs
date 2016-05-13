@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using SimpleProject.Mess;
 using SimpleProject.Comm;
 using SimpleProject.Use;
 using SimpleProject.Data;
+using SimpleProject.MyID.Mess;
+using SimpleProject.Comm.Scenar;
 
 namespace SimpleProject.Sce
 {

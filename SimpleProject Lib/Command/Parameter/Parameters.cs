@@ -1,9 +1,9 @@
 ﻿using SimpleProject.Sce;
 using SimpleProject.Mess;
 using System.Collections.Generic;
-using System;
+using SimpleProject.Mess.Man;
 
-namespace SimpleProject.Comm
+namespace SimpleProject.Comm.Scenar
 {
 
     /**
@@ -11,7 +11,7 @@ namespace SimpleProject.Comm
     Хранит все необходимые параметры для исполнения команд.
     </summary>
     */
-    public class Parameters : IParameters,
+    public class Parameters : IParametersScenar,
         IParametersSceneMenuMessages,
         IParametersSceneGameMessages,
         IParametersMessagesManagerScenario
@@ -27,7 +27,7 @@ namespace SimpleProject.Comm
             _messagesManager = messagesManager;
         }
 
-        List<IScenario> IParameters.GetAllScenario()
+        public List<IScenario> GetAllScenario()
         {
             List<IScenario> scenarios = new List<IScenario>();
             scenarios.Add(_sceneMenu.GetScenario());

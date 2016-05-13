@@ -1,6 +1,6 @@
 ﻿using SimpleProject.Sce;
 
-namespace SimpleProject.Comm
+namespace SimpleProject.Comm.Scenar
 {
     public interface IParametersSceneMenuMessages
     {

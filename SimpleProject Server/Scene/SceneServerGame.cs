@@ -2,7 +2,8 @@
 
 using System;
 using SimpleProject.Comm;
-using SimpleProject.Mess;
+using SimpleProject.MyID.Mess;
+using SimpleProject.Comm.Scenar;
 
 namespace SimpleProject.Sce
 {

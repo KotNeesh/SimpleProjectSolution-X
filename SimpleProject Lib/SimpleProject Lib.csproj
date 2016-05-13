@@ -44,37 +44,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Command\Parameter\IParametersScenar.cs" />
     <Compile Include="Command\Parameter\IParameters.cs" />
     <Compile Include="Command\Parameter\IParametersMessagesManagerScenario.cs" />
     <Compile Include="Command\Parameter\IParametersSceneGameMessages.cs" />
     <Compile Include="Command\Parameter\IParametersSceneMenuMessages.cs" />
     <Compile Include="Command\Parameter\Parameters.cs" />
-    <Compile Include="Command\TypeID\Game\CommandProcessMessageGameMap.cs" />
-    <Compile Include="Command\TypeID\Game\CommandProcessMessageGamerCommand.cs" />
-    <Compile Include="Command\TypeID\Game\CommandProcessMessageGameState.cs" />
-    <Compile Include="Message\TypeID\Game\MessageGameMap.cs" />
-    <Compile Include="Message\TypeID\Game\MessageGamerCommand.cs" />
-    <Compile Include="Message\TypeID\Game\MessageGameState.cs" />
+    <Compile Include="TypeID\Command\Game\CommandProcessMessageGameMap.cs" />
+    <Compile Include="TypeID\Command\Game\CommandProcessMessageGamerCommand.cs" />
+    <Compile Include="TypeID\Command\Game\CommandProcessMessageGameState.cs" />
+    <Compile Include="TypeID\Message\Game\MessageGameMap.cs" />
+    <Compile Include="TypeID\Message\Game\MessageGamerCommand.cs" />
+    <Compile Include="TypeID\Message\Game\MessageGameState.cs" />
     <Compile Include="Network\NetworkParser.cs" />
     <Compile Include="Scene\ISceneGameMessages.cs" />
-    <Compile Include="Command\TypeID\Menu\CommandProcessMessageAccount.cs" />
-    <Compile Include="Command\TypeID\Menu\CommandProcessMessageProfile.cs" />
-    <Compile Include="Scenario\IScenario.cs" />
-    <Compile Include="Scenario\Scenario.cs" />
-    <Compile Include="Scenario\ScenarioMachine.cs" />
-    <Compile Include="Command\TypeID\Menu\CommandProcessMessageChat.cs" />
-    <Compile Include="Command\TypeID\RegisterCommandProcessMessage.cs" />
-    <Compile Include="MessagesManager\IMessagesManagerScenario.cs" />
-    <Compile Include="Command\CommandProcessMessageSmart.cs" />
+    <Compile Include="TypeID\Command\Menu\CommandProcessMessageAccount.cs" />
+    <Compile Include="TypeID\Command\Menu\CommandProcessMessageProfile.cs" />
+    <Compile Include="Command\Scenario\IScenario.cs" />
+    <Compile Include="Command\Scenario\Scenario.cs" />
+    <Compile Include="Command\Scenario\ScenarioMachine.cs" />
+    <Compile Include="TypeID\Command\Menu\CommandProcessMessageChat.cs" />
+    <Compile Include="TypeID\Command\RegisterCommandProcessMessage.cs" />
+    <Compile Include="Message\MessagesManager\IMessagesManagerScenario.cs" />
+    <Compile Include="TypeID\Command\CommandProcessMessageSmart.cs" />
     <Compile Include="Command\CommandSendMessageNetwork.cs" />
-    <Compile Include="Command\TypeID\ICommandProcessMessage.cs" />
+    <Compile Include="TypeID\Command\ICommandProcessMessage.cs" />
     <Compile Include="Command\ICommand.cs" />
     <Compile Include="Scene\ISceneMenuMessages.cs" />
     <Compile Include="Scene\ISceneScenario.cs" />
     <Compile Include="Scene\SceneScenario.cs" />
-    <Compile Include="Message\TypeID\Menu\MessageChat.cs" />
-    <Compile Include="Message\TypeID\HelperTypeID.cs" />
-    <Compile Include="Message\TypeID\Menu\MessageProfile.cs" />
+    <Compile Include="TypeID\Message\Menu\MessageChat.cs" />
+    <Compile Include="TypeID\HelperTypeID.cs" />
+    <Compile Include="TypeID\Message\Menu\MessageProfile.cs" />
     <Compile Include="Network\Packer.cs" />
     <Compile Include="Simplus\ContainerLink\ContainerLink.cs" />
     <Compile Include="Simplus\HP\ISimplusHPClient.cs" />
@@ -90,35 +91,38 @@
     <Compile Include="Simplus\Obj2D\IObj2D.cs" />
     <Compile Include="Simplus\Obj2D\Point.cs" />
     <Compile Include="Simplus\Party\SimplusParty.cs" />
-    <Compile Include="_outdated\Packer\PackerChat.cs" />
-    <Compile Include="Message\TypeID\ITypeID.cs" />
-    <Compile Include="_outdated\Packer\PackerProfile.cs" />
-    <Compile Include="_outdated\Unpacker\IUnpacker.cs" />
+    <Compile Include="TypeID\BinarySerialization\My\Packer\PackerChat.cs" />
+    <Compile Include="Message\ITypeID.cs" />
+    <Compile Include="TypeID\BinarySerialization\My\Packer\PackerProfile.cs" />
+    <Compile Include="TypeID\BinarySerialization\My\Unpacker\IUnpackerMy.cs" />
     <Compile Include="System\Bitfield.cs" />
-    <Compile Include="_outdated\Packer\IPacker.cs" />
-    <Compile Include="MessagesManager\IMessagesManagerNetwork.cs" />
-    <Compile Include="MessagesManager\MessagesManager.cs" />
+    <Compile Include="TypeID\BinarySerialization\My\Packer\IPackerMy.cs" />
+    <Compile Include="Message\MessagesManager\IMessagesManagerNetwork.cs" />
+    <Compile Include="Message\MessagesManager\MessagesManager.cs" />
     <Compile Include="Message\IMessage.cs" />
     <Compile Include="Message\MessageBase.cs" />
-    <Compile Include="Message\TypeID\Menu\MessageAccount.cs" />
+    <Compile Include="TypeID\Message\Menu\MessageAccount.cs" />
     <Compile Include="Network\Network.cs" />
-    <Compile Include="_outdated\Packer\RegisterPacker.cs" />
-    <Compile Include="_outdated\Packer\PackerAccount.cs" />
+    <Compile Include="TypeID\BinarySerialization\My\Packer\RegisterPacker.cs" />
+    <Compile Include="TypeID\BinarySerialization\My\Packer\PackerAccount.cs" />
     <Compile Include="Network\Packet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Network\Unpacker.cs" />
-    <Compile Include="_outdated\Unpacker\UnpuckerProfile.cs" />
+    <Compile Include="TypeID\BinarySerialization\My\Unpacker\UnpuckerProfile.cs" />
     <Compile Include="User\IUserProfile.cs" />
     <Compile Include="User\User.cs" />
     <Compile Include="System\StateMachine.cs" />
-    <Compile Include="_outdated\Unpacker\RegisterUnpacker.cs" />
-    <Compile Include="_outdated\Unpacker\UnpackerChat.cs" />
-    <Compile Include="_outdated\Unpacker\UnpackerAccount.cs" />
+    <Compile Include="TypeID\BinarySerialization\My\Unpacker\RegisterUnpacker.cs" />
+    <Compile Include="TypeID\BinarySerialization\My\Unpacker\UnpackerChat.cs" />
+    <Compile Include="TypeID\BinarySerialization\My\Unpacker\UnpackerAccount.cs" />
     <Compile Include="User\IUserNetwork.cs" />
     <Compile Include="User\UserNetwork.cs" />
     <Compile Include="User\UserProfile.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="TypeID\BinarySerialization\DotNet\" />
+    <Folder Include="_outdated\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

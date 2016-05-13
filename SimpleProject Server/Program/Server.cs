@@ -1,9 +1,10 @@
 ﻿using System.Threading;
 using SimpleProject.Mess;
-using SimpleProject.Comm;
 using SimpleProject.Net;
 using SimpleProject.Sys;
 using SimpleProject.Sce;
+using SimpleProject.Comm.Scenar;
+using SimpleProject.Mess.Man;
 
 namespace SimpleProject
 {

@@ -1,4 +1,4 @@
-﻿using SimpleProject.Mess;
+﻿using SimpleProject.MyID.Mess;
 
 namespace SimpleProject.Sce
 {

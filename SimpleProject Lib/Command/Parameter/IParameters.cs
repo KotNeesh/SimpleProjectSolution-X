@@ -4,6 +4,6 @@ namespace SimpleProject.Comm
 {
     public interface IParameters
     {
-        List<IScenario> GetAllScenario();
+        
     }
 }
